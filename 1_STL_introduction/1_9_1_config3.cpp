@@ -20,6 +20,7 @@ public:
 };
 
 /**
+ * 实例化之后的结果
  * template<>
  * class TestClass<int> {
  *   public: 
