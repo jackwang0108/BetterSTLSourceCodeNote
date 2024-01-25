@@ -38,6 +38,7 @@ public:
 // C++模板特例化, 这两行代码会首先实例化出上面的模板实例, 然后再赋值
 template<>
 int TestClass<int>::_data = 1;
+
 template<>
 int TestClass<char>::_data = 1;
 
