@@ -23,14 +23,14 @@ public:
  * template<>
  * class TestClass<int> {
  *   public: 
- *   = 所有的TestClass<int>类的实例共享同一个遍历
+ *   = 所有的TestClass<int>类的实例共享同一个变量
  *   static int _data;
  * };
  * 
  * template<>
  * class TestClass<char> {
  *   public: 
- *   = 所有的TestClass<char>类的实例共享同一个遍历
+ *   = 所有的TestClass<char>类的实例共享同一个变量
  *   static int _data;
  * };
 */
