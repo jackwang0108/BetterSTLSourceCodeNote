@@ -15,6 +15,8 @@
 #include <iostream>
 using namespace std;
 
+// = 本质上是三个模板, 模板在匹配的时候会有一个规则列表, 根据三个模板的特化来优先匹配
+
 // 一般化设计
 template<class I, class O>
 struct TestClass {
