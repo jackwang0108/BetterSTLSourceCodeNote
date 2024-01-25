@@ -9,10 +9,10 @@
  * in supporting documentation.  Silicon Graphics makes no
  * representations about the suitability of this software for any
  * purpose.  It is provided "as is" without express or implied warranty.
- */ 
+ */
 
 #ifndef __SGI_STL_EXCEPTION_H
-#define __SGI_STL_EXCEPTION_H
+#	define __SGI_STL_EXCEPTION_H
 
 // This header exists solely for portability.  Normally it just includes
 // the header <exception>.
@@ -27,28 +27,28 @@
 // in <exception>, but it suffices to support a bare minimum of STL
 // functionality.
 
-#include <stl_config.h>
+#	include <stl_config.h>
 
-#ifndef __STL_NO_EXCEPTION_HEADER
+#	ifndef __STL_NO_EXCEPTION_HEADER
 
-#include <exception>
-#define __STL_EXCEPTION_BASE exception
+#		include <exception>
+#		define __STL_EXCEPTION_BASE exception
 
-#else /* __STL_NO_EXCEPTION_HEADER */
+#	else /* __STL_NO_EXCEPTION_HEADER */
 
 __STL_BEGIN_NAMESPACE
 
 class _Exception {
 public:
-  virtual ~_Exception() __STL_NOTHROW {}
-  virtual const char* what() const __STL_NOTHROW { return ""; }
+	virtual ~_Exception() __STL_NOTHROW {}
+	virtual const char *what() const __STL_NOTHROW { return ""; }
 };
 
-#define __STL_EXCEPTION_BASE _Exception
+#		define __STL_EXCEPTION_BASE _Exception
 
 __STL_END_NAMESPACE
 
-#endif /* __STL_NO_EXCEPTION_HEADER */
+#	endif /* __STL_NO_EXCEPTION_HEADER */
 
 #endif /* __SGI_STL_EXCEPTION_H */
 

@@ -14,33 +14,34 @@ using namespace std;
 // 这正是为什么每一种  STL  容器都提供有专属迭代器的缘故。
 
 // 如果不写全局比较函数，则需要更改find函数判定
-template <typename T> bool operator!=(const ListItem<T>& item, T n) { 
-    return item.value() != n; 
-} 
+template<typename T>
+bool operator!=(const ListItem<T> &item, T n) {
+	return item.value() != n;
+}
 
 int main() {
-    List<int> mylist;
-    
+	List<int> mylist;
 
-    for (int i = 0; i < 5; ++i) {
-        mylist.insert_front(i);
-        mylist.insert_end(i + 2);
-    }
 
-    mylist.display();
+	for (int i = 0; i < 5; ++i) {
+		mylist.insert_front(i);
+		mylist.insert_end(i + 2);
+	}
 
-    ListIter<ListItem<int>> begin(mylist.front());
-    ListIter<ListItem<int>> end;
-    ListIter<ListItem<int>> iter;
-    iter = find(begin, end, 3);
-    if (iter == end)
-        cout << "not found" << endl;
-    else
-        cout << "found. " << iter->value() << endl;
+	mylist.display();
 
-    iter = find(begin, end, 7);
-    if (iter == end)
-        cout << "not found" << endl;
-    else
-        cout << "found. " << iter->value() << endl;
+	ListIter<ListItem<int>> begin(mylist.front());
+	ListIter<ListItem<int>> end;
+	ListIter<ListItem<int>> iter;
+	iter = find(begin, end, 3);
+	if (iter == end)
+		cout << "not found" << endl;
+	else
+		cout << "found. " << iter->value() << endl;
+
+	iter = find(begin, end, 7);
+	if (iter == end)
+		cout << "not found" << endl;
+	else
+		cout << "found. " << iter->value() << endl;
 }
